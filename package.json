@@ -2,9 +2,12 @@
   "name": "vitize",
   "version": "0.0.0",
   "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
-  "main": "src/vitize.js",
+  "main": "dist/vitize.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "standard --fix",
+    "prepare": "husky",
+    "build": "node esbuild.js"
   },
   "keywords": [
     "tailwindcss",
@@ -13,5 +16,20 @@
     "className"
   ],
   "author": "ambiere <itsambiere@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambiere/vitize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ambiere/vitize/issues"
+  },
+  "homepage": "https://github.com/ambiere/vitize#readme",
+  "devDependencies": {
+    "esbuild": "0.20.1",
+    "husky": "^9.0.7",
+    "lint-staged": "^15.2.0",
+    "standard": "^17.1.0",
+    "tap": "^18.7.0"
+  }
 }
