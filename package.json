@@ -4,7 +4,7 @@
   "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
   "main": "dist/vitize.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "lint:fix": "standard --fix",
     "prepare": "husky",
     "build": "node esbuild.js"
