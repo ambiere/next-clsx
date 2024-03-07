@@ -1,0 +1,17 @@
+{
+  "name": "vitize",
+  "version": "0.0.0",
+  "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
+  "main": "src/vitize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwindcss",
+    "nextjs",
+    "class",
+    "className"
+  ],
+  "author": "ambiere <itsambiere@gmail.com>",
+  "license": "MIT"
+}
