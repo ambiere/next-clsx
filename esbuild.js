@@ -2,9 +2,9 @@ const esbuild = require('esbuild');
 
 (async () => {
   await esbuild.build({
-    entryPoints: ['src/vitize.js'],
+    entryPoints: ['src/index.js'],
     bundle: true,
     minify: true,
-    outfile: 'dist/vitize.js'
+    outfile: 'dist/index.js'
   })
 })()
