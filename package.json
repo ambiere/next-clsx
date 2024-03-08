@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "lint:fix": "standard --fix",
     "prepare": "node ./.husky/install.js",
-    "build": "node esbuild.js"
+    "build": "node src/bin/esbuild.mjs"
   },
   "keywords": [
     "tailwindcss",
