@@ -7,7 +7,7 @@
   "exports": {
     "./": {
       "import": {
-        "defaults": "./dist/index.mjs"
+        "default": "./dist/index.mjs"
       },
       "default": {
         "default": "./dist/index.js"
