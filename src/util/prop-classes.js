@@ -15,4 +15,4 @@ function getPropClasses (criterias, styleKey, val) {
   return aggregatedClasses
 }
 
-module.exports = getPropClasses
+export default getPropClasses

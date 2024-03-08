@@ -10,4 +10,4 @@ function getConditionalClasses (criterias, styleKey, value) {
   return aggregatedClasses.flat()
 }
 
-module.exports = getConditionalClasses
+export default getConditionalClasses
