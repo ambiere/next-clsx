@@ -1,12 +1,12 @@
 {
-  "name": "vitize",
+  "name": "next-clsx",
   "version": "0.0.0",
   "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
-  "main": "dist/vitize.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "lint:fix": "standard --fix",
-    "prepare": "husky",
+    "prepare": "node ./.husky/install.js",
     "build": "node esbuild.js"
   },
   "keywords": [
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/ambiere/vitize#readme",
   "devDependencies": {
+    "@types/node": "^20.11.25",
     "esbuild": "0.20.1",
     "husky": "^9.0.7",
     "lint-staged": "^15.2.0",
