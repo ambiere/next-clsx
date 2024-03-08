@@ -20,6 +20,11 @@
     "prepare": "node ./.husky/install.js",
     "build": "node src/bin/esbuild.mjs"
   },
+  "files": [
+    "*.d.ts",
+    "*.d.mts",
+    "dist"
+  ],
   "keywords": [
     "tailwindcss",
     "nextjs",
