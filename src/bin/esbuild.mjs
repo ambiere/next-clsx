@@ -1,28 +1,27 @@
 import * as esbuild from "esbuild";
-import { existsSync, readFileSync, rm, writeFileSync } from "fs";
+import { existsSync, readFileSync, rm } from "fs";
 import zlib from "zlib";
 
-async function bundle(file) {
+async function bundle(file, ext, fmt) {
   existsSync("dist") && rm("dist", () => {}, { recursive: true });
   await esbuild.build({
-    entryPoints: ["src/index.mjs"],
+    entryPoints: [file],
     minify: true,
     bundle: true,
-    outfile: "dist/index.mjs",
+    format: `${fmt}`,
+    outfile: `dist/index${ext}`,
   });
+}
 
+function logFileSize(file) {
   const input = readFileSync(file, "utf-8");
-  let result = await esbuild.transform(input, {
-    format: "cjs",
-  });
-
-  if (result.code) {
-    writeFileSync("dist/index.js", result.code);
-    const mjs = zlib.gzipSync(input).byteLength;
-    const cjs = zlib.gzipSync(result.code).byteLength;
-    console.log('"%s" (%d b)', "dist/index.js", cjs);
-    console.log('"%s" (%d b)', file, mjs);
+  if (input) {
+    const fileSize = zlib.gzipSync(input).byteLength;
+    console.log('"%s" (%d b)', file, fileSize);
   }
 }
 
-await bundle("dist/index.mjs");
+await bundle("src/index.js", ".mjs", "esm");
+await bundle("src/index.js", ".js", "cjs");
+logFileSize("dist/index.js");
+logFileSize("dist/index.mjs");
