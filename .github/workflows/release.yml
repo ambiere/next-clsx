@@ -42,7 +42,6 @@ jobs:
     permissions:
       contents: write # for softprops/action-gh-release to create GitHub release
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     environment: release
     steps:
       - name: Checkout
