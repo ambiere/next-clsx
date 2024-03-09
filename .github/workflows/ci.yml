@@ -61,28 +61,3 @@ jobs:
         run: pnpm install
       - name: Running tests
         run: pnpm test
-
-  publish:
-    needs: [test, cache-and-install]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the source code
-        uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - name: Install esbuild
-        run: pnpm add esbuild
-      - name: Build package
-        run: pnpm run build
-      - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -n "${{ secrets.NPM_TOKEN }}" ]; then
-            echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
-            npm publish --access public
-          else
-            echo "NODE_AUTH_TOKEN is missing. Package will not be published."
-          fi
