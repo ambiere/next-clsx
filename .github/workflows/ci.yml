@@ -66,6 +66,8 @@ jobs:
     needs: [test, cache-and-install]
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the source code
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
