@@ -53,7 +53,7 @@ jobs:
       - name: Install @ambiere/avae
         run: pnpm add @ambiere/avae
       - name: Generate release description
-        run: pnpm run avae
+        run: avae --count 1
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
