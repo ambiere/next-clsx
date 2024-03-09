@@ -1,4 +1,4 @@
-name: Test
+name: CI
 on:
   push:
     branches:
@@ -59,7 +59,22 @@ jobs:
           version: 8
       - name: Install dependencies
         run: pnpm install
-      - name: Build
-        run: pnpm run build
       - name: Running tests
         run: pnpm test
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build package
+        run: pnpm run build
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
+            npm publish --access public
+          else
+            echo "NODE_AUTH_TOKEN is missing. Package will not be published."
+          fi
