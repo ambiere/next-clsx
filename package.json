@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "lint:fix": "standard --fix",
     "prepare": "node ./.husky/install.js",
-    "build": "node src/bin/esbuild.mjs"
+    "build": "node src/bin/esbuild.mjs",
+    "avae": "avae --count 1"
   },
   "files": [
     "*.d.ts",
@@ -36,6 +37,7 @@
   },
   "homepage": "https://github.com/ambiere/next-clsx#readme",
   "devDependencies": {
+    "@ambiere/avae": "^0.1.2",
     "@types/node": "^20.11.25",
     "esbuild": "0.20.1",
     "husky": "^9.0.7",
