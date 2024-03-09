@@ -52,6 +52,8 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
+      - name: Install @ambiere/avae
+        run: pnpm add @ambiere/avae
       - name: Generate release description
         run: pnpm run avae
       - name: Release
