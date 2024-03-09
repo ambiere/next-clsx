@@ -51,7 +51,7 @@ jobs:
         with:
           version: 8
       - name: Install @ambiere/avae
-        run: pnpm add @ambiere/avae
+        run: pnpm i -g @ambiere/avae
       - name: Generate release description
         run: avae --count 1
       - name: Release
