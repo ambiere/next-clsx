@@ -6,7 +6,8 @@
   "module": "dist/index.mjs",
   "exports": {
     "import": "./dist/index.mjs",
-    "require": "./dist/index.js"
+    "require": "./dist/index.js",
+    "types": "./types/index.d.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -16,8 +17,8 @@
     "avae": "avae --count 1"
   },
   "files": [
-    "*.d.ts",
-    "*.d.mts",
+    "types/*.d.ts",
+    "types/*.d.mts",
     "dist"
   ],
   "keywords": [
