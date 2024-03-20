@@ -1,6 +1,6 @@
 {
   "name": "next-clsx",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
