@@ -1,3 +1,9 @@
+## [v0.1.3]() 2024 March 20
+
+This release mainly fixed styling props.
+
+Fixes: [#2](https://www.github.com/ambiere/next-clsx/issues/#2)
+
 ## [v0.1.1]() [2024 March 09]
 
 ### Changes
