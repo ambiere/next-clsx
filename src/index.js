@@ -1,35 +1,35 @@
-const propClx = require('./util/prop-clx')
-const condClx = require('./util/cond-clx')
+const getPropsClsx = require('./util/prop-clsx')
+const getConditionalClsx = require('./util/cond-clx')
 
-function clx (s, c = {}) {
-  return (k, ...a) => {
+function nextClsx (style, options = {}) {
+  return (className, ...classNames) => {
     let i = 0
-    const clx = []
-    let _k = k[0].split(' ')
+    const clsx = []
+    let classNameArray = className[0].split(' ')
 
-    _k.push(a)
-    _k = _k.flat().filter((val) => val !== '')
+    classNameArray.push(classNames)
+    classNameArray = classNameArray.flat().filter((className) => className !== '')
 
-    while (i < _k.length) {
-      Object.entries(s[_k[i]]).map(([k, val]) => {
-        const _clx = condClx(c, k, val)
-        const _clx_ = propClx(c, k, val)
-        if (_clx.length) {
-          return clx.push(_clx)
+    while (i < classNameArray.length) {
+      Object.entries(style[classNameArray[i]]).map(([classNamesKey, classNames]) => {
+        const propsClsx = getPropsClsx(options, classNamesKey, classNames)
+        const conditionalClsx = getConditionalClsx(options, classNamesKey, classNames)
+        if (conditionalClsx.length) {
+          return clsx.push(conditionalClsx)
         }
-        if (_clx_.length) {
-          return _clx_.map((c) => clx.push(c))
+        if (propsClsx.length) {
+          return propsClsx.map((classNames) => clsx.push(classNames))
         }
-        return clx.push([k, val])
+        return clsx.push([classNamesKey, classNames])
       })
       i++
     }
 
-    return clx
-      .filter(([_, str]) => typeof str === 'string')
-      .reduce((str, cls) => str + ` ${cls[1]}`, '')
+    return clsx
+      .filter(([_, className]) => typeof className === 'string')
+      .reduce((_classNames, classNames) => _classNames + ` ${classNames[1]}`, '')
       .trim()
   }
 }
 
-module.exports = clx
+module.exports = nextClsx
