@@ -1,13 +1,13 @@
 {
   "name": "next-clsx",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Making tailwind utility classes reusabilty and semantic html a breeze. Your styling woes is a thing of the past.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "types": "./types/index.d.ts",
   "exports": {
     "import": "./dist/index.mjs",
-    "require": "./dist/index.js",
-    "types": "./types/index.d.ts"
+    "require": "./dist/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
