@@ -6,7 +6,6 @@ async function bundle(file, ext, fmt) {
   existsSync("dist") && rm("dist", () => {}, { recursive: true });
   await esbuild.build({
     entryPoints: [file],
-    minify: true,
     bundle: true,
     format: `${fmt}`,
     outfile: `dist/index${ext}`,
