@@ -1,5 +1,5 @@
 const getPropsClsx = require('./util/prop-clsx')
-const getConditionalClsx = require('./util/cond-clx')
+const getConditionalClsx = require('./util/cond-clsx')
 
 function nextClsx (style, options = {}) {
   return (className, ...classNames) => {
@@ -24,7 +24,6 @@ function nextClsx (style, options = {}) {
       })
       i++
     }
-
     return clsx
       .filter(([_, className]) => typeof className === 'string')
       .reduce((_classNames, classNames) => _classNames + ` ${classNames[1]}`, '')
