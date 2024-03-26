@@ -92,12 +92,6 @@ Edit settings.json by adding the variable name of your style object to the class
 }
 ```
 
-
-
-
-
-
-
 ## Features
 
 ### 1 Style props
