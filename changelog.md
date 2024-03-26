@@ -1,3 +1,7 @@
+## [v.1.4]() 2024 March 26
+
+Added types declaration for next-clsx
+
 ## [v0.1.3]() 2024 March 20
 
 This release mainly fixed styling props.
