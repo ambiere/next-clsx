@@ -1,4 +1,4 @@
-## [v.1.4]() 2024 March 26
+## [v0.1.4]() 2024 March 26
 
 Added types declaration for next-clsx
 
