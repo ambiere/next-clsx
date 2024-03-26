@@ -74,6 +74,5 @@ declare module "next-clsx" {
   * @param {nextClsx.Options} options - Styling options. Conditions that next-clsx will use to style components.
   * @returns {ApplyClasses} ApplyClasses - Util function that returns tailwindcss utility classes from provided style property key(s).
   **/
-  export function nextClsx(style: nextClsx.Style, options: nextClsx.Options): nextClsx.ApplyClasses
-
+  export default function nextClsx(style: nextClsx.Style, options: nextClsx.Options): nextClsx.ApplyClasses
 }
